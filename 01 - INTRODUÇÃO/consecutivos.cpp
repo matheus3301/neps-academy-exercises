@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Consecutivos
+//Id do Exercício: 110
+
 #include <iostream>
 
 using namespace std;

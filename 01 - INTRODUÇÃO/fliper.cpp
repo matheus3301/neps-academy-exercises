@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Flíper
+//Id do Exercício: 87
+
 #include <iostream>
 
 using namespace std;

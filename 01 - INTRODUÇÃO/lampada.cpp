@@ -1,3 +1,9 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Lâmpadas
+//Id do Exercício: 52
+
+
 #include <iostream>
 
 using namespace std;

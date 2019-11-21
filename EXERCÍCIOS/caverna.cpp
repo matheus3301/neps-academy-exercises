@@ -1,11 +1,17 @@
 #include <iostream>
-#include <cmath>
+#include <algorithm>
 
 using namespace std;
 
 int main(){
 
-    int m,n;
+    long long m,n,prev = 0;
+    cin >> n >>m;
+    
+
+    for(long long i = 0; i < n; i++){
+
+    }
     
 
 

@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Campo Minado
+//Id do Exercício: 241
+
 #include <iostream>
 
 using namespace std;

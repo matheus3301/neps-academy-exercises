@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Quadrado Mágico ou Quadrado Mágico(OBI 2017)
+//Id do Exercício: 537 ou 236
+
 #include <iostream>
 
 using namespace std;

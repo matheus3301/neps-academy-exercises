@@ -1,3 +1,9 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Contagem de Algarismos
+//Id do Exercício: 189
+
+
 #include <iostream>
 
 using namespace std;

@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Todos os Divisores
+//Id do Exercício: 216
+
 #include <iostream>
 
 using namespace std;

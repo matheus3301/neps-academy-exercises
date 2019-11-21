@@ -1,3 +1,9 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Fita Colorida
+//Id do Exercício: 49
+
+
 #include <iostream>
 #include <cmath>
 

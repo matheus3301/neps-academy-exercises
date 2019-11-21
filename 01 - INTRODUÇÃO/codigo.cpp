@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Código (OBI 2015)
+//Id do Exercício: 47
+
 #include <iostream>
 
 using namespace std;

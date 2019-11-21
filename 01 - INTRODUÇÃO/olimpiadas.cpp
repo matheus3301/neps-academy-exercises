@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Medalhas
+//Id do Exercício: 2
+
 #include <iostream>
 #include <algorithm>
 

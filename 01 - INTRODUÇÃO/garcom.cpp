@@ -1,3 +1,8 @@
+//EXERCÍCIO NEPS ACADEMY
+//Autor: Matheus Rocha
+//Nome do Exercício: Garçom 
+//Id do Exercício: 324
+
 #include <iostream>
 
 using namespace std;
