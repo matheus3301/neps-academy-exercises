@@ -11,30 +11,41 @@
 
 ## Lista de Exercícios 
 
-- [ ] Hello
-- [ ] Medalhas
-- [ ] Gincana(OBI 2016)
+- [x] Hello
+- [x] Medalhas
+- [x] Gincana(OBI 2016)
 - [ ] Caverna de Ordinskaya
-- [ ] Fuga com Helicóptero
-- [ ] Arco e Flecha
+- [x] Fuga com Helicóptero
+- [x] Arco e Flecha
 - [ ] Caminhos do Reino
-- [ ] Po que mão
+- [x] Po que mão
 - [ ] Jardim de Infância
-- [ ] Quase Primo
+- [x] Quase Primo
 - [ ] Falta uma
 - [ ] Ciclovias
-- [ ] Bondinho
+- [x] Bondinho
 - [ ] Drone de Entrega
 - [ ] Teleférico
 - [ ] Segredo do Cofre
 - [ ] Game-10
 - [ ] Chefe
 - [ ] Botas Trocadas
-- [ ] Cartas
+- [x] Cartas
 - [ ] Montanha
 - [ ] Jogo de Tabuleiro
 - [ ] Castelos da Nloglônia
 - [ ] Dario e Xerxes
+- [ ] Mapa(OBI 2017)
+- [ ] Cortando o Papel
+- [ ] Frete
+- [ ] Acordes Intergaláticos
+- [ ] Brincadeira
+...
+
+
+
+
+
 
 
 
