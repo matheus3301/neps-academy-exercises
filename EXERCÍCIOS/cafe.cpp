@@ -20,7 +20,6 @@ int main(){
     }
 
     int mins = 0;
-
     for(int i = 0; i < 3; i++){
         if(i>maior){
             mins += (i-maior)*andar[i]*2;
