@@ -7,30 +7,29 @@ int main(){
 
     cin >> a >> b >> c;
 
-    if(a == b && a == c){
+        if(a == b && a == c){
+            cout << "*" << endl;
+            return 0;
+        }
 
-        cout << "*";
-        return 0;
-    }
+        if(a == b && a != c){
+            cout << "C" << endl;
+            return 0;
+        }
 
+        if(a == c && a != b){
+            cout << "B" << endl;
+            return 0;
+        }
 
-    if(a == b && a != c){
+        if(c == b && a != c){
 
-        cout << "C";
-        return 0;
-    }
+            cout << "A" << endl;
+            return 0;
+        }
 
-    if(a == c && a != b){
-
-        cout << "B";
-        return 0;
-    }
-
-    if(c == b && a != c){
-
-        cout << "A";
-        return 0;
-    }
+        cin >> a >> b >> c;
+    
 
 
     return 0;
