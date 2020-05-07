@@ -1,57 +1,34 @@
 #include <bits/stdc++.h>
-
-#define endl "\n"
-
 using namespace std;
 
-int n, k;
-long long m;
+long int a[1123456], n, f[1123456], m;
 
-long long a[10010];
-long long dp[10010];
-long long soma = 0;
+long int fr(int k){
 
-
-long long sigma(int val){
-    long long res = 0;
-    for(int i = 1; i <= n; i++){
-        res += a[i];
+  for(int i = n+1; i <= k; i++){
+    f[i]=0;
+    for(int j = 1; j <= n; j++){
+      f[i]+=a[j]*f[i-j];
+      f[i] %= m;
     }
-    cout << "A["<<val<<"]"<<" = "<<res<<endl;
-    return res;
+  }
+
+  return f[k];
 }
-
-long long f(long long val){
-    if(dp[val] != -1) return dp[val];
-
-    dp[val] = (soma*f(val-1))%m;
-    return dp[val];
-
-}
-
 
 int main(){
-    ios_base::sync_with_stdio(false);
-    cin.tie(NULL);
-    memset(dp,-1,sizeof(dp));
+  ios::sync_with_stdio(0);
+  cin.tie(0);
 
-    
+  int k;
 
-    cin >> n >> k >> m;
+  cin >> n >> k >> m;
 
-    for(int i = 1; i <= n; i++){
-        cin >> a[i];
-        soma += a[i];
-    }
+  for(int i = 1; i <= n; i++) cin >> a[i];
 
-    cout << "Soma" << soma << endl;
-    for(int i = 1; i <= n; i++){
-        cin >> dp[i];
-    }
+  for(int i = 1; i <= n; i++) cin >> f[i];
 
-    cout << f(k) << endl;
+  cout << fr(k) << endl;
 
-    
-
-    return 0;
+  return 0;
 }

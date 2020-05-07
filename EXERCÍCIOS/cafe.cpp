@@ -1,35 +1,41 @@
-#include <iostream>
-#include <cmath>
+#include <bits/stdc++.h>
+
+#define endl "\n"
 
 using namespace std;
 
+int a[4];
+
+
 int main(){
-    int andar[3];
-    for(int i = 0; i < 3; i++){
-        cin >> andar[i];
-        
-    }
-
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+    
     int maior = 0;
-    if(andar[1] >= andar[0] && andar[1] >= andar[2]){
-        maior=1;
-    }else{
-        if(andar[2] > andar[0]){
-            maior=2;
-        }
+    int local = 0;
+
+    for(int i = 1; i <= 3; i++){
+        cin >> a[i];       
+    }
+    
+    int res[4] = {0,0,0,0};
+
+    res[1] += a[3] * 4;
+    res[1] += a[2] * 2;
+    
+    res[2] += a[1] * 2;
+    res[2] += a[3] * 2;
+        
+    res[3] += a[1] * 4;
+    res[3] += a[2] * 2;
+
+    int menor = INT32_MAX;
+
+    for(int i = 1; i<=3; i++){
+        if(res[i] < menor) menor = res[i];
     }
 
-    int mins = 0;
-    for(int i = 0; i < 3; i++){
-        if(i>maior){
-            mins += (i-maior)*andar[i]*2;
-        }else{
-            mins += (maior-i)*andar[i]*2;
-
-        }
-    }
-
-    cout << mins << endl;
-
+    cout << menor << endl;
+    
     return 0;
 }
