@@ -4,48 +4,49 @@
 
 using namespace std;
 
-int n,x,y,ans;
-vector<long long> dist;
+typedef long long ll;
 
-int merge_sort(vector<long long> &v){
-    int inv = 0;
-    if (v.size() == 1) return 0;
+ll n,x,y;
+vector<ll> dist;
 
-    vector<long long> u1,u2;
+ll merge_sort(vector<ll> &v){
+    ll inv = 0;
+
+    if(v.size() == 1) return 0;
+
+    vector<ll> a, b;
 
     for(int i = 0; i < v.size()/2; i++){
-        u1.push_back(v[i]);
+        a.push_back(v[i]);
     } 
     for(int i = v.size()/2; i < v.size(); i++){
-        u2.push_back(v[i]);
-    } 
-
-    inv += merge_sort(u1);
-    inv += merge_sort(u2);
-
-    u1.push_back(-1e9);
-    u2.push_back(-1e9);
-
-    int ini1 = 0, ini2 = 0;
-
-    for(int i = 0; i < v.size(); i++){
-        if(u1[ini1] >= u2[ini2]){
-            v[i] = u1[ini1];
-            ini1++;
-        }else{
-            v[i] = u2[ini2];
-            ini2++;
-
-            inv += u1.size()-ini1-1;
-        }
+        b.push_back(v[i]);
     }
 
+    inv += merge_sort(a);
+    inv += merge_sort(b);
+
+    a.push_back(-2e63);
+    b.push_back(-2e63);
+
+   int ini1 = 0, ini2 = 0;
+
+   for(int i = 0; i < v.size(); i++){
+       if(a[ini1] > b[ini2]){
+           v[i] = a[ini1];
+           ini1++;
+       }else{
+           v[i] = b[ini2];
+           ini2++;
+
+           inv += a.size()-ini1-1;
+       }
+   }
+    
     return inv;
-
-
 }
 
-long long calc(int x, int y){
+ll calc(ll x, ll y){
     return x*x + y*y;
 }
 
@@ -58,10 +59,9 @@ int main(){
         cin >> x >> y;
         dist.push_back(calc(x,y));
 
-        cout << merge_sort(dist) << endl;;
     }
-
-    cout << ans << endl;
+    
+    cout << merge_sort(dist) << endl;
 
     return 0;
 }
