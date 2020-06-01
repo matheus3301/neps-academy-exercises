@@ -2,55 +2,56 @@
 
 #define endl "\n"
 
+#define MAXN 100010
+
 using namespace std;
-
-int n, m;
-
-int vet[100010];
-int prefix[100010];
 
 long long final[10];
 
-void atualiza(int incicio, int fim, int val);
+int n, m;
 
-void atualiza(int inicio, int fim, int val){
-    prefix[inicio] += val;
-    prefix[fim+1] -= val;
+int V[MAXN], P[MAXN];
+
+void prefixo(int e,int d,int val){
+    P[e] += d;
+    P[d+1] += -d;
+
 }
-
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
     cin >> n >> m;
-    for(int i = 1; i <= n; i++)
-        cin >> vet[i];
+    for(int i = 0; i < n; i++){
+        cin >> V[i];
+    }
 
-    int ultimo = 1,tmp;
-
-    atualiza(1,1,1);
+    int ult = 0;
+    prefixo(0,0,1);
 
     for(int i = 0; i < m; i++){
+        int tmp;
         cin >> tmp;
 
-        atualiza(min(tmp,ultimo),max(tmp,ultimo),1);
-        atualiza(ultimo,ultimo,-1);
+        int inicio = min(tmp,ult);
+        int fim = max(tmp,ult);
 
-        
-        ultimo = tmp;
+        prefixo(inicio, fim, 1);
+        prefixo(fim,fim,-1);
+
+        ult = tmp;
     }
 
-    for(int i = 1; i <= n; i++){
-        prefix[i] += prefix[i-1];
+    for(int i = 1; i < n; i++){
+        P[i] += P[i-1];
 
-        final[vet[i]] += prefix[i];        
+        final[V[i]] += P[i];
     }
 
-    for(int i = 0; i < 10; i++){
+    for(int i = 0; i < 10; i++)
         cout << final[i] << " ";
-    }
+    
     cout << endl;
-
     return 0;
 }

@@ -5,6 +5,7 @@
 using namespace std;
 
 int n;
+<<<<<<< HEAD
 int base = -1;
 
 vector<int> adj[1000010];
@@ -26,6 +27,9 @@ void bfs(int x){
         }
     }
 }
+=======
+vector<int> adj[100010];
+>>>>>>> afc13f40e1a95d24b1b5f31e93f0b78c4736d2da
 
 int main(){
     ios_base::sync_with_stdio(false);
