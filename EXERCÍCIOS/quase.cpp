@@ -1,41 +1,42 @@
-#include <iostream>
+#include <bits/stdc++.h>
+
+#define endl "\n"
 
 using namespace std;
 
-int num[41];
+long long n, k;
+vector<long long> v;
+long long ans;
 
-bool div(long long atual, int lim){
-    for(int i = 0; i < lim; i++){
-        if(atual % num[i] == 0) return false;
+bool testa(long long i){
+    for(long long j = 1; j <= k; j++){
+        if(i%v[j] == 0) return false;
     }
 
     return true;
+
 }
 
+void resolve(){
+
+}
 
 int main(){
-    long long  n;
-    int  k;
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
 
     cin >> n >> k;
-
-    long long  res = 0;
-
-    for (int i = 0; i < k; i++){
-        cin >> num[i];
+    int tmp;
+    for(long long i = 1; i <= k; ++i ){
+        cin >> tmp;
+        if(tmp > n)
+        {}
     }
+        
 
-    for(long long  i = 1; i <= n; i++){
-        if(div(i,k)){
-            res++;
-        }
-    }
-
-
-    cout << res << "\n";
+    resolve();
     
-
-
+    cout << ans << endl;
 
     return 0;
 }

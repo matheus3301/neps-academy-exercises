@@ -1,33 +1,65 @@
 #include <bits/stdc++.h>
-
+#define DEBUG(x) cout << "DEBUG: " << x << endl
 #define endl "\n"
 
 using namespace std;
 
-vector<int> mobile[100010];
-bool visitado[100010];
+int n;
+int base = -1;
 
-bool calcula(int n = 0){
-    visitado[n] = true;
-    for(int mob : mobile[n]){
-        if(visitado[n]) continue;
-        dfs()
+vector<int> adj[1000010];
+int dist[1000010];
+
+queue<int> q;
+
+void bfs(int x){
+    dist[x] = 0;
+
+    q.push(x);
+    while(!q.empty()){
+        int s = q.front(); q.pop();
+        for(auto u : adj[s]){
+            if(dist[u] != -1) continue;    
+
+            dist[u] = dist[s] + 1;
+            q.push(u);
+        }
     }
 }
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+    cin >> n;
     
-    int n; cin >> n;
-    for(int i = 0; i < n; i++){
-        int a, b;
-        cin >> a >> b;
-        mobile[b].push_back(a);
+    for(int i = 0; i <= n; i++){
+        dist[i] = -1;
     }
 
-    bool calc = calcula();
+    int u,v;
+    for(int i = 0; i < n; i++){
+        cin >> u >> v;
+        adj[v].push_back(u);
+    }
 
+     
+
+    for(int i = 1; i <= n; i++){
+        if(adj[i].size() != 0) continue;
+
+        if(base == 0){
+            base = dist[i];
+        }
+
+        if(base != dist[i]){
+            cout << "mal" << endl;
+            return 0;
+        }
+
+    }
+
+    cout << "bem" << endl;
 
     return 0;
 }
