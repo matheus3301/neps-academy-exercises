@@ -1,54 +1,33 @@
 #include <bits/stdc++.h>
 
-#define endl "\n"
-
 using namespace std;
 
-int c, n;
-queue<pair<int,int > > fila;
-int caixa[10010];
+priority_queue<int,vector<int>,greater<int>> caixas;
 
-int t, d;
+int t,d,c,n,ans;
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-
     cin >> c >> n;
-    for(int i = 0 ; i < n; i++){
-        cin >> t >> d;
-        fila.push({t,d});        
+    for(int i = 0; i < c; i++){
+        caixas.push(0);
     }
-    int ans = 0, tempo = fila.front().first;
+            
+    for(int i = 0; i < n; i++){
+        cin >> t >> d;
 
-    while(!fila.empty()){
-        for(int i = 0; i < c; i++){
-            if(caixa[i] > 0) caixa[i]--;
-            if(tempo < fila.front().first){
-                caixa[i] -= fila.front().first - tempo;
-                tempo = fila.front().first - 1;
-            }
-            if(caixa[i] <= 0){
-                caixa[i] = fila.front().second;
-                if(tempo - fila.front().first > 20){
-                    ans++;
-                } 
-                fila.pop(); 
-                if(fila.empty()){
-                    cout << ans << endl;
-                    return 0;
+        int caixa = caixas.top();
+        caixas.pop();
 
-                }
-            }
-
+        if(caixa > t  + 20){
+            ans++;
         }
 
-        tempo++;
+        caixas.push(max(t,caixa) + d);
     }
-
+    
     cout << ans << endl;
-    return 0;
-
     return 0;
 }
