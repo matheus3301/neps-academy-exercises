@@ -2,10 +2,10 @@
 
 ## Cursos
 - [x] Programação Básica
-- [ ] Técnicas de Programação
-- [ ] Algoritmos em Grafos
 - [ ] Matemática Computacional
+- [ ] Técnicas de Programação
 - [ ] Estruturas de Dados
+- [ ] Algoritmos em Grafos
 - [ ] Python Bootcamp
 - [ ] Portugol
 
@@ -19,7 +19,7 @@
 - [x] Arco e Flecha
 - [ ] Caminhos do Reino
 - [x] Po que mão
-- [ ] Jardim de Infância
+- [x] Jardim de Infância
 - [x] Quase Primo
 - [ ] Falta uma
 - [ ] Ciclovias
@@ -33,7 +33,7 @@
 - [x] Cartas
 - [ ] Montanha
 - [ ] Jogo de Tabuleiro
-- [ ] Castelos da Nloglônia
+- [x] Castelos da Nloglônia
 - [ ] Dario e Xerxes
 - [ ] Mapa(OBI 2017)
 - [ ] Cortando o Papel

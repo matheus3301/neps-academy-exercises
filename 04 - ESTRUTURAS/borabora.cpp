@@ -6,12 +6,16 @@ using namespace std;
 
 int p, m, n;
 
-pair<int, char> carta[310];
+queue<int> a;
 
+pair<int, char> carta[310];
+vector< pair<int, char> > deque[11];
 
 int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
+
+
 
     cin >> p >> m >> n;
     while(p != 0 && m != 0 && n != 0){
@@ -26,8 +30,10 @@ int main(){
 
         }
 
-        for(int i = 0; i < p*m; i++){
-            
+        for(int i = 0; i < p; i++){
+            for(int j = 0; j < m; j++){
+               
+            }
         }
 
 
