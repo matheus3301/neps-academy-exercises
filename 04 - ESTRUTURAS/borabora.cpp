@@ -5,11 +5,25 @@
 using namespace std;
 
 int p, m, n;
+vector<pair<int,char> > baralho; 
 
-queue<int> a;
+/*
+NAIPES: C D H S (prioridade é essa mesmo)
 
-pair<int, char> carta[310];
-vector< pair<int, char> > deque[11];
+CARTA: 
+
+*/
+
+void solve(){
+    int x;char s;
+    for(int i = 0; i < n; i++){
+        cin >> x >> s;
+        baralho.push_back({x,s});
+
+        
+    }
+}
+
 
 int main(){
     ios_base::sync_with_stdio(false);
@@ -19,25 +33,8 @@ int main(){
 
     cin >> p >> m >> n;
     while(p != 0 && m != 0 && n != 0){
-        
-        for(int i = 0; i < n; i++){
-            int ntmp;
-            char ctmp;
-
-            cin >> ntmp >> ctmp;
-
-            carta[i] = {ntmp,ctmp};
-
-        }
-
-        for(int i = 0; i < p; i++){
-            for(int j = 0; j < m; j++){
+        solve();
                
-            }
-        }
-
-
-        
         cin >> p >> m >> n;
     }
     
