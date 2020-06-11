@@ -11,20 +11,16 @@ int v[1010];
 
 int n,m;
 
-int solve(int i, int valor, int num){
-    int &pdm = memo[i][valor];
+int solve(int i, int valor){
+    if(valor == 0) return 1;
+    if(i == n) return 0;
 
-    if(pdm != -1) return pdm;
-    
-
-    if(valor == 0) return num;
-    if(i == n) return 2e31;
-
+    if(memo[i][valor] != -1) return memo[i][valor];
 
     if(v[i] <= valor)
-        return pdm = min(solve(i,valor - v[i],num+1) , solve(i+1,valor,num));   
+        return memo[i][valor] = max(solve(i,valor - v[i]), solve(i+1,valor ));   
 
-    return pdm = solve(i+1,valor,num);
+    return memo[i][valor] = solve(i+1,valor);
 }
 
 int main(){
@@ -38,9 +34,7 @@ int main(){
     for(int i = 0; i < n; i++)
         cin >> v[i];
 
-    sort(v,v+n);
-
-    cout << (solve(0,m,0) < 10 ? "S" : "N") << endl;    
+    cout << (solve(0,m) ? "S" : "N") << endl;    
 
     return 0;
 }

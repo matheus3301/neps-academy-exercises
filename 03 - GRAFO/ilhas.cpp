@@ -22,8 +22,8 @@ void dij(int x){
     q.push({0,x});
     while(!q.empty()){
         int a = q.top().second; q.pop();
+        
         if(visited[a]) continue;
-
         visited[a] = true;
 
         for(auto u : adj[a]){

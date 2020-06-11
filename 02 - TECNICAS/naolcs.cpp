@@ -1,26 +1,31 @@
 #include <bits/stdc++.h>
 #define REP(x,ini,fim) for(int x = ini; x < fim; x++)
 #define endl "\n"
+#define debug(x) cout << "DEBUG: " << x << endl;
 
 using namespace std;
 
 typedef long long ll;
 
 int n,m;
-int n2;
+unordered_map<int,int> s1;
 
-int s1[1000010];
-int s2[1000010];
+vector<int> seq;
 
-int memo[1000010][1000010];
+int lis(){
+    vector<int> pilha;
+    for(int i = 0; i < seq.size(); i++){
 
-int lcs(int i,int j){
-    if (i == 0 || j == 0) return 0;
-    
-    if(s1[i] == s2[j]) return 1 + lcs(i-1,j-1);
+        vector<int>::iterator it = lower_bound(pilha.begin(),pilha.end(),seq[i]);
 
-    return max(lcs(i-1,j), lcs(i,j-1));
+        if(it == pilha.end()){
+            pilha.push_back(seq[i]);
+        }else{
+            *it = seq[i];
+        }
+    }
 
+    return (int)pilha.size();
 }
 
 int main(){
@@ -28,13 +33,22 @@ int main(){
     cin.tie(NULL);
     
     cin >> n >> m;
-    for(int i = 1; i <= n; i++)
-        cin >> s1[i];
+    int tmp;
+    for(int i = 0; i < n; i++){
+        cin >> tmp;
+        s1[tmp] = i;
+    }
 
-    for(int i = 1; i <= m; i++)
-        cin >> s2[i];
+    for(int i = 0; i < m; i++){
+        cin >> tmp;
+        if(s1.find(tmp) != s1.end()){
+            seq.push_back(s1[tmp]);
+        }
+    }
 
-    cout << lcs(n,m) << endl;
+    cout << lis() << endl;
+
+    
 
     return 0;
 }
