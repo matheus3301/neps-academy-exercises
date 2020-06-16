@@ -10,7 +10,14 @@ vector<pair<int,char> > baralho;
 /*
 NAIPES: C D H S (prioridade é essa mesmo)
 
-CARTA: 
+CARTA: x s
+
+12 : -DIREÇÃO;
+7 : PROXIMO JOGADOR PEGA 2 E NÃO DESCARTA
+1 : PROXIMO JOGADOR PEGA 1 E NÃO DESCARTA
+
+
+
 
 */
 
