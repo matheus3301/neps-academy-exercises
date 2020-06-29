@@ -1,6 +1,7 @@
 #include <bits/stdc++.h>
+#define REP(x,ini,fim) for(int x = ini; x < fim; x++)
 #define endl "\n"
-#define debug(x) cerr  << #x << " : " << x << endl;
+#define debug(x) cout << "DEBUG: " << x << endl;
 
 using namespace std;
 
@@ -10,6 +11,10 @@ int main(){
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     
+    int n;
+    cin >> n;
+
+    cout << n/1000000 << endl;
     
 
     return 0;
